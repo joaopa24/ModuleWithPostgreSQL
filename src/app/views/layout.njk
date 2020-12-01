@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {% block head %}
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <div class="links">
+         <a href="/Teachers">Teachers</a>
+         <a href="/Students">Students</a>
+        </div> 
+    </header>
+    {% block content %}
+    {% endblock %}
+    
+    <script src="/script.js"></script>
+</body>
+</html>

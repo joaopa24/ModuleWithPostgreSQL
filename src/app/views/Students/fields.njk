@@ -1,0 +1,44 @@
+<div class="info">
+    <div class="item">
+        <div>Avatar Url</div>
+        <div>
+            <input type="url" name="avatar_url" placeholder="http://" value="{{ student.avatar_url }}">
+        </div>
+    </div>
+    <div class="item">
+        <div>Nome completo</div>
+        <div>
+            <input type="text" name="name" placeholder="Nome" value="{{ student.name }}">
+        </div>
+    </div>
+    <div class="item">
+        <div>Data de nascimento</div>
+        <div>
+            <input type="date" name="date" value="{{ student.date }}">
+        </div>
+    </div>
+     <div class="item">
+        <div>Email</div>
+        <div>
+            <input type="email" name="email" value="{{ student.email }}">
+        </div>
+    </div>
+    <div class="item">
+        <div>Escolaridade</div>
+        <div>
+            <select name="Ano">
+                <option value="5EF" {% if student.Ano == "5EF" %}selected{% endif %}>5º Ano do Ensino Fundamental</option>
+                <option value="6EF" {% if student.Ano == "6EF" %}selected{% endif %}>6º Ano do Ensino Fundamental</option>
+                <option value="7EF" {% if student.Ano == "7EF" %}selected{% endif %}>7º Ano do Ensino Fundamental</option>
+                <option value="8EF" {% if student.Ano == "8EF" %}selected{% endif %}>8º Ano do Ensino Fundamental</option>
+                <option value="9EF" {% if student.Ano == "9EF" %}selected{% endif %}>9º Ano do Ensino Fundamental</option>
+                <option value="1EM" {% if student.Ano == "1EM" %}selected{% endif %}>1º Ano do Ensino Médio</option>
+                <option value="2EM" {% if student.Ano == "2EM" %}selected{% endif %}>2º Ano do Ensino Médio</option>
+                <option value="3EM" {% if student.Ano == "3EM" %}selected{% endif %}>3º Ano do Ensino Médio</option>
+            </select>
+        </div>
+    </div>
+    <div class="item">
+        <div>Carga Horária</div>
+        <div><input type="number" name="Charge" placeholder="Digite aqui a sua Carga horária semanal" value="{{ student.Charge }}"></div>
+    </div>

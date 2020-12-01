@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --color-primary: #edff48;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #282a36;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 26px;
+    box-sizing: border-box;
+    border:2px #181920 solid ;
+}
+
+.links a{
+    text-decoration: white;
+    color: white;
+    font-size: 20px;
+    position: relative;
+}
+.links a + a{
+    margin-left: 32px;
+}
+.links a.active{
+    font-weight: bolder;
+    color: var(--color-primary);
+    transition: 200ms;
+}
+
+.links a.active::after{
+    width: 100%;
+
+}
+
+.links a::after{
+    content: "";
+    background-color: var(--color-primary);
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+}
+.links a:hover::after{
+    width: 100%;
+    transition: 250ms ease-out;
+}
+/* --- CARD --- */
+
+.card { 
+    background-color: rgba(0, 0, 0, 0.25);
+    width: 800px;
+    min-height: 500px;
+    display: grid;
+    grid-template-columns:40% 60%;
+    margin: 45px auto;
+    animation:Look 500ms ease-out;
+    
+}
+@keyframes Look{
+    0%{
+        opacity: 0;
+        transform: translateX(15px);
+    }
+    100%{
+        opacity:1;
+    }
+ }
+@keyframes Pisca{
+    0%{
+        box-shadow: 0px 0px 0px 0px var(--color-primary);
+    }
+    50%{
+        box-shadow: 1px 1px 8px 0px var(--color-primary);
+    }
+    100%{
+        box-shadow: 0px 0px 0px 0px var(--color-primary);
+    }
+}
+.avatar{
+    animation:Pisca 1500ms infinite;
+}
+.Teacher {
+    padding: 32px;
+    animation:Pisca 1500ms infinite;
+}
+.Teacher h1{
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--color-primary);
+}
+.info .item{
+    padding: 16px 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.info .item:last-child{
+    border: none;
+}
+
+.info .item div:nth-child(1){
+    color: rgba(255, 255, 255, 0.50);
+    font-size: 14px;
+    font-weight: normal;
+    line-height:24px;
+    letter-spacing: 0.7px;
+}
+
+.info .item div:nth-child(2){
+    color:rgba(255, 255, 255, 0.75);
+    font-weight:bolder;
+    font-size: 18px;
+}
+
+.info .item span{
+    display: inline-block;
+    background-color:var(--color-primary);
+    padding: 8px 16px;
+    margin-top: 6px;
+    color: rgba(0, 0, 0, 0.50);
+    margin-right: 6px;
+    border-radius: 4px;
+}
+
+input{
+    align-items: center;
+    outline: none;
+    height:30px;
+    width: 100%;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.25); 
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.750);
+    box-shadow: 2px 2px 1px 1px black;
+}
+
+input[type="radio"]{
+    width: initial;
+    height: initial;
+    margin-left: -3px;
+    margin-right: 6px;
+    align-items: center;
+    box-shadow: none;
+    outline: none;
+}
+
+input::placeholder{
+    padding-left: 4px;
+}
+
+button[type="submit"],
+a.button {
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px 32px;
+    background-color: var(--color-primary);
+    color: rgba(0, 0, 0, 0.50);
+    font-weight: bolder;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-radius: 6px;
+}
+
+a.button{
+    display: block;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+}
+
+.Delete-form button[type="submit"]{
+    background-color: rgba(170, 10, 10, 0.61);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+select{
+    color: rgba(255, 255, 255, 0.750);
+    width: 100%;
+    padding: 6px 4px;
+    margin-top: 6px;
+    outline: none;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.25); 
+    border-radius: 6px;
+    box-shadow: 2px 2px 1px 1px black;
+}
+option{
+    width: 100%;
+    background:#56575e;
+    color: rgba(255, 255, 255, 0.750);
+    margin-top: 20px auto;
+    
+}
+
+input[type="date"]{
+    color: rgba(255, 255, 255, 0.750);
+    padding-left: 4px;
+    
+    
+}
+
+/* Tabela */
+  
+.table-container {
+    display: block;
+    padding: 50px;
+    box-sizing: border-box;
+    border-radius: 5%;
+    border: 1px solid #181920;
+}
+
+.table-container table{
+    border-spacing: 0;
+    width: 100%;
+}
+
+.table-container thead tr th{
+    text-align: left;
+    
+}
+th{
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+td{
+    border-bottom: 2px solid rgba(255, 255, 255, 0.075);
+}
+th, td{
+    padding: 16px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+tbody tr:last-child td{
+    border-bottom: none;
+}
+
+tbody tr td:first-child{
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    align-items: center;
+    font-weight: bolder;
+}
+
+tbody tr td:first-child span{
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    border: 1px solid #000000;
+}
+
+tbody tr td:last-child a,
+.table-container > a{
+    background-color: var(--color-primary);
+    padding: 8px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color:  rgba(0, 0, 0, 0.50);
+    font-size: 16px;
+    border-radius:10%;
+    font-weight: bolder;
+}
+.table-container > a{
+    display: inline-block;
+    margin-bottom: 6px;
+    margin-left: 16px;
+
+}
+.table-container thead tr th:last-child,td:last-child{
+    text-align: center;
+}
