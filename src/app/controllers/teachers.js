@@ -30,15 +30,8 @@ module.exports = {
             RETURNING id
         `
         const values = [
-            req.body.name,
-            req.body.avatar_url,
-            date(req.bodybirth_date).iso,
-            schooling(req.body.education_level),
-            req.body.class_type,
-            req.body.subjects_taught,
-            date(Date.now()).iso
+            
         ]
-        
 
         return
     },
