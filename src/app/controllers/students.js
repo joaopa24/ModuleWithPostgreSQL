@@ -1,20 +1,16 @@
-const { age, date, schooling } = require("../utils")
+const { age, date, schooling } = require("../../lib/utils")
+const db = require('../../config/db')
 const Intl = require("intl")
 
 module.exports = {
-    Students(req, res) {
+    index(req, res) {
         return
     },
     create(req, res) {
         return
     },
     post(req, res) {
-        const keys = Object.keys(req.body)
-        for (key of keys) {
-            if (req.body[key] == "") {
-                res.send("Porfavor, preenchar todos os campos!")
-            }
-        }
+        return
     },
     show(req, res) {
         return
@@ -23,12 +19,6 @@ module.exports = {
         return
     },
     put(req, res) {
-        const keys = Object.keys(req.body)
-        for (key of keys) {
-            if (req.body[key] == "") {
-                res.send("Porfavor, preenchar todos os campos!")
-            }
-        }
         return
     },
     delete(req, res) {
