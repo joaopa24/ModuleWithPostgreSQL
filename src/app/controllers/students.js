@@ -4,7 +4,8 @@ const Intl = require("intl")
 
 module.exports = {
     index(req, res) {
-        return res.render('Students/Students')
+        
+
     },
     create(req, res) {
         return
