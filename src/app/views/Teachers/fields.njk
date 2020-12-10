@@ -20,22 +20,22 @@
     <div class="item">
         <div>Grau de escolaridade</div>
         <div>
-            <select name="Grau" class="lol" id="">
-                <option value="Medio" {% if teacher.Grau == "Medio" %}selected{% endif %}>Ensino Médio Completo</option>
-                <option value="Superior" {% if teacher.Grau == "Superior" %}selected{% endif %}>Ensino Superior Completo</option>
-                <option value="Mestre" {% if teacher.Grau == "Mestre" %}selected{% endif %}>Mestrado</option>
-                <option value="Doutor" {% if teacher.Grau == "Doutor" %}selected{% endif %}>Doutorado</option>
+            <select name="education_level" class="lol" id="">
+                <option value="Medio" {% if teacher.education_level == "Medio" %}selected{% endif %}>Ensino Médio Completo</option>
+                <option value="Superior" {% if teacher.education_level == "Superior" %}selected{% endif %}>Ensino Superior Completo</option>
+                <option value="Mestre" {% if teacher.education_level == "Mestre" %}selected{% endif %}>Mestrado</option>
+                <option value="Doutor" {% if teacher.education_level == "Doutor" %}selected{% endif %}>Doutorado</option>
             </select>
         </div>
     </div>
     <div class="item">
         <div>Tipo de aula</div>
         <div>
-            <span><input type="radio" name="Tipo" value="Presencial" {% if teacher.Tipo == "Presencial" %}checked{% endif %}>Presencial</span>
-            <span><input type="radio" name="Tipo" value="Distancia" {% if teacher.Tipo == "Distancia" %}checked{% endif %}>A distancia</span>
+            <span><input type="radio" name="class_type" value="Presencial" {% if teacher.class_type == "Presencial" %}checked{% endif %}>Presencial</span>
+            <span><input type="radio" name="class_type" value="Distancia" {% if teacher.class_type == "Distancia" %}checked{% endif %}>A distancia</span>
         </div>
     </div>
     <div class="item">
         <div>Área de atuação</div>
-        <div><input type="text" name="Info" placeholder="Digite aqui as suas áreas de atuação" value="{{ teacher.Info }}"></div>
+        <div><input type="text" name="subjects_taught" placeholder="Digite aqui as suas áreas de atuação" value="{{ teacher.subjects_taught }}"></div>
     </div>
