@@ -39,7 +39,7 @@ module.exports = {
     edit(req, res) {
         student.find(req.params.id, function (student) {
             if (!student) return res.send("student not found!")
-
+         
             student.date = date(student.date).iso
 
             return res.render("Students/edit", { student })

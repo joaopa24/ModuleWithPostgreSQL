@@ -21,14 +21,14 @@
             </td>
             <td>{{ student.email }}</td>
             <td>
-              {% if student.Ano == "5EF" %}5º Ano do Ensino Fundamental{% endif %}
-              {% if student.Ano == "6EF" %}6º Ano do Ensino Fundamental{% endif %}
-              {% if student.Ano == "7EF" %}7º Ano do Ensino Fundamental{% endif %}
-              {% if student.Ano == "8EF" %}8º Ano do Ensino Fundamental{% endif %}
-              {% if student.Ano == "9EF" %}9º Ano do Ensino Fundamental{% endif %}
-              {% if student.Ano == "1EM" %}1º Ano do Ensino Médio{% endif %}
-              {% if student.Ano == "2EM" %}2º Ano do Ensino Médio{% endif %}
-              {% if student.Ano == "3EM" %}3º Ano do Ensino Médio{% endif %}
+              {% if student.grade == "5EF" %}5º Ano do Ensino Fundamental{% endif %}
+              {% if student.grade == "6EF" %}6º Ano do Ensino Fundamental{% endif %}
+              {% if student.grade == "7EF" %}7º Ano do Ensino Fundamental{% endif %}
+              {% if student.grade == "8EF" %}8º Ano do Ensino Fundamental{% endif %}
+              {% if student.grade == "9EF" %}9º Ano do Ensino Fundamental{% endif %}
+              {% if student.grade == "1EM" %}1º Ano do Ensino Médio{% endif %}
+              {% if student.grade == "2EM" %}2º Ano do Ensino Médio{% endif %}
+              {% if student.grade == "3EM" %}3º Ano do Ensino Médio{% endif %}
             </td>
             <td>
               <a href="/Students/{{student.id}}">Ver</a>
