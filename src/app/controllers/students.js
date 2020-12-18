@@ -1,5 +1,4 @@
 const { age, date, schooling, graduation } = require("../../lib/utils")
-const db = require('../../config/db')
 const student = require('../models/student')
 const Intl = require("intl")
 
@@ -10,7 +9,9 @@ module.exports = {
         })
     },
     create(req, res) {
-        return res.render('Students/create')
+        student.StudentOptions(function (options) {
+            return res.render('Students/create', { TeacherOptions: options })
+        })
     },
     post(req, res) {
         const keys = Object.keys(req.body)
@@ -27,32 +28,35 @@ module.exports = {
     show(req, res) {
         student.find(req.params.id, function (student) {
             if (!student) return res.send("student not found!")
-            
+
             student.age = age(student.date)
             student.birthday = date(student.date).birthday
             student.year = schooling(student.grade)
-            
+
 
             return res.render("Students/show", { student })
         })
     },
     edit(req, res) {
-        student.find(req.params.id, function (student) {
-            if (!student) return res.send("student not found!")
-         
-            student.date = date(student.date).iso
+        student.find(req.params.id, function (students) {
+            if (!students) return res.send("student not found!")
 
-            return res.render("Students/edit", { student })
+            students.date = date(students.date).iso
+            console.log(students.id)
+            student.StudentOptions(function(options){
+                return res.render('Students/edit', { students , TeacherOptions: options })
+            })
         })
+        
     },
     put(req, res) {
         const keys = Object.keys(req.body)
+        console.log(keys)
         for (key of keys) {
             if (req.body[key] == "") {
-                return res.send("porfavor preencha todos os campos")
+                return res.send("porfavor preencha todos os campos")    
             }
         }
-
         student.update(req.body, function () {
             return res.redirect(`/Students/${req.body.id}`)
         })

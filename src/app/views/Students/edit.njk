@@ -2,19 +2,19 @@
 
 {% block content %}
     <div class="card">
-        <section class="avatar" style="background: url({{ student.avatar_url }}) no-repeat center center / cover"></section>
+        <section class="avatar" style="background: url({{ students.avatar_url }}) no-repeat center center / cover"></section>
         <div class="containes">
             <form class="Teacher" method="POST" action="/Students?_method=PUT">
                 <h1>Editar</h1>
 
                 {% include "Students/fields.njk" %}
 
-                <input type="hidden" name="id" value="{{ student.id }}">
+                <input type="hidden" name="id" value="{{ students.id }}">
                 <button type="submit">Salvar</button>
             </form>
 
             <form class="Delete-form" id="form-delete" method="POST" action="/Students?_method=DELETE">
-                <input type="hidden" name="id" value="{{ student.id }}">
+                <input type="hidden" name="id" value="{{ students.id }}">
                 <button type="submit">Deletar</button>
             </form>
         </div>
