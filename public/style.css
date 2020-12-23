@@ -280,3 +280,42 @@ tbody tr td:last-child a,
 .table-container thead tr th:last-child,td:last-child{
     text-align: center;
 }
+
+/* filter */
+.table-container .header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 32px;
+}
+.table-container .header a,
+.table-container .header form button{
+    margin-top: 16px;
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: var(--color-primary);
+    color: rgba(0, 0, 0, 0.50);
+    font-weight: bolder;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    box-sizing: border-box;
+    
+}
+
+.table-container .header form{
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+    gap: 8px;
+}
+
+.table-container .header form input{
+    padding: 4px 8px;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.table-container .header form button{
+    margin: 0;
+}

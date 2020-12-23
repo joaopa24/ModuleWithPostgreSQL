@@ -1,30 +1,42 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-<div class="card table-container">
-    <a href="/Teachers/create">Criar</a>
+  <div class="card table-container">
+    <div class="header">
+      <div class="button_create">
+        <a href="/Teachers/create">Criar</a>
+      </div>
+      <form action="/Teachers" method="GET">
+        <input type="text" name="filter" placeholder="Nome ou materia" value="{{ filter }}">
+
+        <button type="submit">Filtrar</button>
+      </form>
+    </div>
+
     <table>
       <thead>
         <tr>
-            <th>Nome Completo</th>
-            <th>Acompanhamento</th>
-            <th>Alunos</th>
-            <th>Ação</th>
+          <th>Nome Completo</th>
+          <th>Acompanhamento</th>
+          <th>Alunos</th>
+          <th>Ação</th>
         </tr>
       </thead>
       <tbody>
-            {% for teacher in teachers %}
-             <tr>
-              <td>
-                  <span style="background-image: url({{ teacher.avatar_url }})"></span>
-                  {{ teacher.name }}
-              </td>
-              <td>{{ teacher.subjects_taught}}</td>
-              <td>{{ teacher.total_students }}</td>
-              <td><a href="/Teachers/{{teacher.id}}">Ver</a></td>
-             </tr>
-            {% endfor %}
+        {% for teacher in teachers %}
+          <tr>
+            <td>
+              <span style="background-image: url({{ teacher.avatar_url }})"></span>
+              {{ teacher.name }}
+            </td>
+            <td>{{ teacher.subjects_taught}}</td>
+            <td>{{ teacher.total_students }}</td>
+            <td>
+              <a href="/Teachers/{{teacher.id}}">Ver</a>
+            </td>
+          </tr>
+        {% endfor %}
       </tbody>
     </table>
-</div>
+  </div>
 {% endblock content %}
