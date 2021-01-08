@@ -5,23 +5,23 @@ const Intl = require("intl")
 
 module.exports = {
     index(req, res) {
-        const { filter , page , limit } = req.query
+        let { filter , page , limit } = req.query
 
         page = page || 1
         limit = limit || 2
-        let offset = limit * (page -1)
+        let offset = limit * (page - 1)
 
         const params = {
             filter,
             page, 
             limit,
             offset,
-            callback(teacher){
+            callback(teachers){
                 const pagination = {
-                    total: Math.ceil(teacher[0].total/ limit),
+                    total: Math.ceil(teachers[0].total/ limit),
                     page
                 }
-                return res.render('Teachers/Teachers', {teacher , filter, pagination})
+                return res.render('Teachers/Teachers', { teachers , filter, pagination})
             }
         }
         teacher.paginate(params)
